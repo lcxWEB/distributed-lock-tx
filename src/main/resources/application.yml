@@ -1,0 +1,11 @@
+server:
+  port: 9999
+spring:
+  redis:
+    host: 47.105.150.11
+    password: 3edc4rfv
+    database: 0
+    port: 6379
+    lettuce:
+      pool:
+        max-active: 8
