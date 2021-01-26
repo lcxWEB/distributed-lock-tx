@@ -10,16 +10,18 @@ import org.springframework.web.bind.annotation.RestController;
  * @Date 2021/1/25  15:00
  */
 @RestController
-public class RedisTest {
+public class RedisController {
 
     @Autowired
     private StringRedisTemplate stringRedisTemplate;
 
     @PostMapping("set")
-    public void test() {
+    public void setGet() {
         // 保存字符串
         stringRedisTemplate.opsForValue().set("aaa", "111");
         String value = stringRedisTemplate.opsForValue().get("aaa");
         System.out.println(value);
     }
+
+
 }
