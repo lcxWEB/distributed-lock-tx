@@ -1,4 +1,4 @@
-package com.lcx.controller;
+package com.lcx.redis.controller;
 
 import org.redisson.api.RLock;
 import org.redisson.api.RReadWriteLock;
@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author: lichunxia

@@ -1,4 +1,4 @@
-package com.lcx.config;
+package com.lcx.redis.config;
 
 import org.redisson.Redisson;
 import org.redisson.api.RedissonClient;
