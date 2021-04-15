@@ -50,7 +50,7 @@ public class ConnectionDemo {
             };
 
             zooKeeper = new ZooKeeper(connectString,
-                    4000, watcher);
+                    60000, watcher);
             countDownLatch.await();
             long sessionId = zooKeeper.getSessionId();
             byte[] sessionPasswd = zooKeeper.getSessionPasswd();
