@@ -2,10 +2,10 @@ server:
   port: 9999
 spring:
   redis:
-    host: 47.105.150.11
-    password: 3edc4rfv
-    database: 0
-    port: 6379
-    lettuce:
-      pool:
-        max-active: 8
+    cluster:
+      nodes: localhost:7001,localhost:7002,localhost:7003
+  #    host: localhost
+  #    password: 123456
+  #    database: 0
+  #    port: 6379
+

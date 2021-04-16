@@ -8,7 +8,9 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author: lichunxia
@@ -29,16 +31,22 @@ public class RedissonController {
         // 获取一把锁
         RLock lock = redissonClient.getLock("my-lock");
 
-        // 加锁，阻塞式等待
+        RLock lock1= redissonClient.getLock("my-lock1");
+
+
+        // 加锁，阻塞式等待。默认30秒，会自动续期。
+
         lock.lock();
+        lock1.lock();
 
         // 10秒自动解锁，自动解锁时间一定要大于业务的执行时间
-        // lock.lock(10, TimeUnit.SECONDS);
-        // 问题，锁到期后，不会自动续期
+        // lock.lock(30, TimeUnit.SECONDS);
 
         try {
-            System.out.println("加锁成功，执行业务..." + Thread.currentThread().getId());
-            Thread.sleep(30000);
+            System.out.println("加锁成功，执行业务..." + Thread.currentThread() + "ThreadId: " + Thread.currentThread().getId());
+            System.out.println(LocalDateTime.now());
+            Thread.sleep(60000);
+            System.out.println(LocalDateTime.now());
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

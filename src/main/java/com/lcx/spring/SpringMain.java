@@ -1,5 +1,6 @@
 package com.lcx.spring;
 
+import com.lcx.spring.postprocessor.MyBeanFactoryPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,19 +20,26 @@ public class SpringMain {
 
     //     加载xml -> 解析xml -> 封装BeanDefinition -> 实例化 -> 放到容器中 -> 从容器中获取
 
+    // 填充属性 -- populate？？
+
+
     //
     //   AOP --
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext();
         // AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
-        ctx.register(AppConfig.class);
+        ctx.register(AppConfig.class, MyBeanFactoryPostProcessor.class);
         ctx.refresh();
         AppConfig appConfig = ctx.getBean(AppConfig.class);
         MyBean myBean = ctx.getBean(MyBean.class);
+        MyBeanFactoryPostProcessor factoryPostProcessor = ctx.getBean(MyBeanFactoryPostProcessor.class);
+        System.out.println(appConfig);
+        System.out.println(myBean);
+        System.out.println(factoryPostProcessor);
 
-        ClassPathXmlApplicationContext xmlApplicationContext = new ClassPathXmlApplicationContext();
-        xmlApplicationContext.setConfigLocation("applicationContext.xml");
+        // ClassPathXmlApplicationContext xmlApplicationContext = new ClassPathXmlApplicationContext();
+        // xmlApplicationContext.setConfigLocation("applicationContext.xml");
 
         System.out.println();
     }

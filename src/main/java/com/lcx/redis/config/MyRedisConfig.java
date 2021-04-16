@@ -15,12 +15,15 @@ public class MyRedisConfig {
 
     /**
      * 所有对Redisson的使用都通过RedissonClient
+     *
      * @return
      */
     @Bean(destroyMethod = "shutdown")
     RedissonClient redisson() {
         Config config = new Config();
-        config.useSingleServer().setAddress("redis://47.105.150.11:6379").setPassword("3edc4rfv");
+        // config.useSingleServer().setAddress("redis://localhost:6379").setPassword("123456");
+        config.setThreads(24).useClusterServers()
+                .addNodeAddress("redis://localhost:7001", "redis://localhost:7002", "redis://localhost:7003");
         RedissonClient redissonClient = Redisson.create(config);
         return redissonClient;
     }

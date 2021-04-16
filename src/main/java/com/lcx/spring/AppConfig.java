@@ -1,6 +1,7 @@
 package com.lcx.spring;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
@@ -10,6 +11,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * @create: 2021-04-14 10:38
  */
 @Configuration
+@ComponentScan(value = "com.lcx.spring")
 public class AppConfig {
 
     // private final MyBean someBean;
