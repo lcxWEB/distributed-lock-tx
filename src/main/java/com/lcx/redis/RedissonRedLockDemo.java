@@ -31,5 +31,7 @@ public class RedissonRedLockDemo {
         } finally {
             redLock.unlock();
         }
+
+
     }
 }

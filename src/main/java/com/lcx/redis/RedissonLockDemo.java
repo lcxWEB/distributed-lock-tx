@@ -6,7 +6,6 @@ import org.redisson.api.RedissonClient;
 import org.redisson.config.Config;
 
 import java.time.LocalDateTime;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author: lichunxia
@@ -22,11 +21,14 @@ public class RedissonLockDemo {
         // 还可以getFairLock(), getReadWriteLock()
         RLock lock = redissonClient.getLock("my-lock");
 
+        RLock fairLock = redissonClient.getFairLock("my-fair-lock");
+        fairLock.lock();
+
         for (int i = 0; i < 5; i++) {
             new Thread(() -> {
+                System.out.println("线程开始..." + Thread.currentThread() + "ThreadId: " + Thread.currentThread().getId());
+                lock.lock();
                 try {
-                    System.out.println("线程开始..." + Thread.currentThread() + "ThreadId: " + Thread.currentThread().getId());
-                    lock.lock();
                     // a43c8a3d-8ca8-4816-971b-75e421975663:45
                     // a43c8a3d-8ca8-4816-971b-75e421975663:49
                     System.out.println("加锁成功，执行业务..." + Thread.currentThread() + "ThreadId: " + Thread.currentThread().getId());

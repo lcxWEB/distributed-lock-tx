@@ -15,8 +15,8 @@ public class MyBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        BeanDefinition beanDefinition = beanFactory.getBeanDefinition("myBean");
-        beanDefinition.setDescription("hahaha");
+        // BeanDefinition beanDefinition = beanFactory.getBeanDefinition("myBean");
+        // beanDefinition.setDescription("hahaha");
         System.out.println("设置BeanDefinition");
     }
 

@@ -32,9 +32,9 @@ public class SpringMain {
         ctx.register(AppConfig.class, MyBeanFactoryPostProcessor.class);
         ctx.refresh();
         AppConfig appConfig = ctx.getBean(AppConfig.class);
+        System.out.println(appConfig);
         MyBean myBean = ctx.getBean(MyBean.class);
         MyBeanFactoryPostProcessor factoryPostProcessor = ctx.getBean(MyBeanFactoryPostProcessor.class);
-        System.out.println(appConfig);
         System.out.println(myBean);
         System.out.println(factoryPostProcessor);
 

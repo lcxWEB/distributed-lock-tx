@@ -14,11 +14,11 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 @ComponentScan(value = "com.lcx.spring")
 public class AppConfig {
 
-    // private final MyBean someBean;
-    //
-    // public AppConfig(MyBean someBean) {
-    //     this.someBean = someBean;
-    // }
+    private final MyBean someBean;
+
+    public AppConfig(MyBean someBean) {
+        this.someBean = someBean;
+    }
 
     /**
      * mark BFPP-returning @Bean methods as static
