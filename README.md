@@ -1,2 +1,2 @@
-# distributed-lock
-distributed-lock study
+# distributed-lock-tcx
+distributed-lock-txstudy
