@@ -21,9 +21,9 @@ public class MyRedisConfig {
     @Bean(destroyMethod = "shutdown")
     RedissonClient redisson() {
         Config config = new Config();
-        // config.useSingleServer().setAddress("redis://localhost:6379").setPassword("123456");
-        config.setThreads(24).useClusterServers()
-                .addNodeAddress("redis://localhost:7001", "redis://localhost:7002", "redis://localhost:7003");
+        config.useSingleServer().setAddress("redis://localhost:6379").setPassword("123456");
+        // config.setThreads(24).useClusterServers()
+        //         .addNodeAddress("redis://localhost:7001", "redis://localhost:7002", "redis://localhost:7003");
         RedissonClient redissonClient = Redisson.create(config);
         return redissonClient;
     }

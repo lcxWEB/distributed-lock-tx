@@ -6,7 +6,6 @@ import org.apache.curator.framework.recipes.cache.ChildData;
 import org.apache.curator.framework.recipes.cache.CuratorCache;
 import org.apache.curator.framework.recipes.cache.CuratorCacheListener;
 import org.apache.curator.retry.RetryOneTime;
-import org.apache.zookeeper.CreateMode;
 
 /**
  * @author: lichunxia

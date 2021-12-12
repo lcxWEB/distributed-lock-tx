@@ -2,7 +2,6 @@ package com.lcx.spring;
 
 import com.lcx.spring.postprocessor.MyBeanFactoryPostProcessor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author: lichunxia

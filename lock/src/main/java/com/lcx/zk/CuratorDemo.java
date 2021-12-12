@@ -1,4 +1,4 @@
-package com.lcx.zk;
+package lcx.zk;
 
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;

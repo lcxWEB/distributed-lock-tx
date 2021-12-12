@@ -1,4 +1,4 @@
-// package com.lcx;
+// package lcx;
 //
 //
 // import org.junit.jupiter.api.Assertions;
