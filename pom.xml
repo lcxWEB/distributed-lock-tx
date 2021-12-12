@@ -8,6 +8,7 @@
         <module>tx-xa</module>
         <module>lock</module>
         <module>spring-tx</module>
+        <module>tx-tcc</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
