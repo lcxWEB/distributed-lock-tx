@@ -7,6 +7,7 @@
     <modules>
         <module>distributed-tx</module>
         <module>lock</module>
+        <module>spring-tx</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -56,6 +57,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.12</version>
         </dependency>
 
     </dependencies>
