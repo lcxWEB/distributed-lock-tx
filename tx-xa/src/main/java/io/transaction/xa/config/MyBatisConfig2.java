@@ -41,6 +41,9 @@ public class MyBatisConfig2 {
     // 配置数据源
     @Bean(name = "account2DataSource")
     public DataSource account2DataSource(DBConfig2 dbConfig2) throws SQLException {
+        /**
+         * MysqlXADataSource
+         */
         MysqlXADataSource mysqlXaDataSource = new MysqlXADataSource();
         mysqlXaDataSource.setUrl(dbConfig2.getUrl());
         mysqlXaDataSource.setPinGlobalTxToPhysicalConnection(true);
@@ -48,6 +51,9 @@ public class MyBatisConfig2 {
         mysqlXaDataSource.setUser(dbConfig2.getUsername());
         mysqlXaDataSource.setPinGlobalTxToPhysicalConnection(true);
 
+        /**
+         * AtomikosDataSourceBean
+         */
         AtomikosDataSourceBean xaDataSource = new AtomikosDataSourceBean();
         xaDataSource.setXaDataSource(mysqlXaDataSource);
         xaDataSource.setUniqueResourceName("account2DataSource");
