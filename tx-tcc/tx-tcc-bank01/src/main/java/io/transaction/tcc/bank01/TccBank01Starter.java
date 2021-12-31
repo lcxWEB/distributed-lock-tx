@@ -42,8 +42,10 @@ import java.util.UUID;
 public class TccBank01Starter {
 
     public static void main(String[] args){
-        ConfigurableApplicationContext context = SpringApplication.run(TccBank01Starter.class, args);
-        UserAccountBank01Service userAccountBank01Service = context.getBean(UserAccountBank01Service.class);
-        userAccountBank01Service.transferAmount(new UserAccountDto(UUID.randomUUID().toString(), "1001", "1002", BigDecimal.valueOf(100)));
+        SpringApplication.run(TccBank01Starter.class, args);
+
+        // ConfigurableApplicationContext context = SpringApplication.run(TccBank01Starter.class, args);
+        // UserAccountBank01Service userAccountBank01Service = context.getBean(UserAccountBank01Service.class);
+        // userAccountBank01Service.transferAmount(new UserAccountDto(UUID.randomUUID().toString(), "1001", "1002", BigDecimal.valueOf(100)));
     }
 }

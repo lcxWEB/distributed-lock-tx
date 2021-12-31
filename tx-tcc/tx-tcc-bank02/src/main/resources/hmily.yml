@@ -29,20 +29,20 @@ repository:
     driverClassName: com.mysql.jdbc.Driver
     url : jdbc:mysql://127.0.0.1:3306/hmily?useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&autoReconnect=true&failOverReadOnly=false&useSSL=false&serverTimezone=UTC
     username: root
-    password: root
+    password: 123456
     maxActive: 20
     minIdle: 10
     connectionTimeout: 30000
     idleTimeout: 600000
     maxLifetime: 1800000
   file:
-    path: D:\hmilyLog
+    path: /Users/lichunxia/Documents/demos/distributed-lock-tx/tx-tcc/logs/hmilyLog
     prefix: /hmily
-  mongo:
-    databaseName:
-    url:
-    userName:
-    password:
+#  mongo:
+#    databaseName:
+#    url:
+#    userName:
+#    password:
   zookeeper:
     host: localhost:2181
     sessionTimeOut: 1000000000

@@ -13,6 +13,17 @@
 
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.lettuce</groupId>
+                    <artifactId>lettuce-core</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
         <!-- jedis -->
         <dependency>
             <groupId>redis.clients</groupId>
@@ -34,5 +45,6 @@
             <artifactId>curator-recipes</artifactId>
             <version>5.1.0</version>
         </dependency>
+
     </dependencies>
 </project>
